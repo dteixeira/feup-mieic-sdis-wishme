@@ -1,8 +1,9 @@
 Wishme::Application.routes.draw do
 
-  devise_for :users
-
   root :to => "home#index"
+
+  # API routes
+  post      'api/register' => 'api/registrations#create', :as => :registrations_create
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -19,7 +20,7 @@ Wishme::Application.routes.draw do
   #   resources :products
 
   # Sample resource route with options:
-  #   resources :products do
+  #   restsources :products do
   #     member do
   #       get 'short'
   #       post 'toggle'
