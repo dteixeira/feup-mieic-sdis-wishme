@@ -36,3 +36,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Other gems
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'imgur2'

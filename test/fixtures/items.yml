@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  category_id: 1
+  sha1_id: MyString
+  name: MyString
+  description: MyString
+  img_hash: MyString
+  private: false
+
+two:
+  category_id: 1
+  sha1_id: MyString
+  name: MyString
+  description: MyString
+  img_hash: MyString
+  private: false

@@ -1,0 +1,6 @@
+class Category < ActiveRecord::Base
+
+  has_many :item, :class_name => 'Item', :dependent => :destroy
+  attr_accessible :id, :name
+
+end
