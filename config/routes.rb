@@ -16,6 +16,7 @@ Wishme::Application.routes.draw do
   post      'api/list/update'   => 'api/list/list#update',              :as => :list_list_update
   post      'api/list/delete'   => 'api/list/list#delete',              :as => :list_list_delete
   post      'api/list/clean'    => 'api/list/list#clean',               :as => :list_list_clean
+  post      'api/list/create'   => 'api/list/list#create',              :as => :list_list_create
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

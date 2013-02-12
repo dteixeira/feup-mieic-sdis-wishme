@@ -66,6 +66,20 @@ class Api::List::ListController < Api::BaseApiController
     end
   end
 
+  def create
+    begin
+      list = ::List.new params[:list]
+      list.user = @user
+      list.save!
+      render :json => {
+        :success => true,
+        :list => build_list_response(list)
+      }
+    rescue
+      list_failure I18n.t('list.failure.params_failure')
+    end
+  end
+
   private
   def list_failure msg
     render :json => {

@@ -14,46 +14,46 @@
 ActiveRecord::Schema.define(:version => 20130212140428) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name",       :default => "", :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
   create_table "items", :force => true do |t|
-    t.integer  "category_id",                    :null => false
-    t.integer  "list_id",                        :null => false
-    t.string   "sha1_id",     :default => "",    :null => false
-    t.string   "name",        :default => "",    :null => false
+    t.integer  "category_id", :null => false
+    t.integer  "list_id",     :null => false
+    t.string   "sha1_id",     :null => false
+    t.string   "name",        :null => false
     t.string   "description"
     t.string   "img_hash"
-    t.boolean  "private",     :default => false, :null => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.boolean  "private",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "items", ["sha1_id"], :name => "index_items_on_sha1_id", :unique => true
 
   create_table "lists", :force => true do |t|
-    t.integer  "user_id",                        :null => false
-    t.string   "sha1_id",     :default => "",    :null => false
-    t.string   "name",        :default => "",    :null => false
+    t.integer  "user_id",     :null => false
+    t.string   "sha1_id",     :null => false
+    t.string   "name",        :null => false
     t.string   "description"
-    t.boolean  "private",     :default => false, :null => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.boolean  "private",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "lists", ["sha1_id"], :name => "index_lists_on_sha1_id", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "email",                :default => "", :null => false
-    t.string   "username",             :default => "", :null => false
-    t.string   "encrypted_password",   :default => "", :null => false
+    t.string   "email",                :null => false
+    t.string   "username",             :null => false
+    t.string   "encrypted_password",   :null => false
     t.string   "authentication_token"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
