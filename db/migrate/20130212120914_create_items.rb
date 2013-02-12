@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration
 
       t.integer   :id
       t.integer   :category_id,   :null => false
+      t.integer   :list_id,       :null => false
       t.string    :sha1_id,       :null => false, :default => ""
       t.string    :name,          :null => false, :default => ""
       t.string    :description

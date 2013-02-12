@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212120914) do
+ActiveRecord::Schema.define(:version => 20130212140428) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :default => "", :null => false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130212120914) do
 
   create_table "items", :force => true do |t|
     t.integer  "category_id",                    :null => false
+    t.integer  "list_id",                        :null => false
     t.string   "sha1_id",     :default => "",    :null => false
     t.string   "name",        :default => "",    :null => false
     t.string   "description"
@@ -33,6 +34,18 @@ ActiveRecord::Schema.define(:version => 20130212120914) do
   end
 
   add_index "items", ["sha1_id"], :name => "index_items_on_sha1_id", :unique => true
+
+  create_table "lists", :force => true do |t|
+    t.integer  "user_id",                        :null => false
+    t.string   "sha1_id",     :default => "",    :null => false
+    t.string   "name",        :default => "",    :null => false
+    t.string   "description"
+    t.boolean  "private",     :default => false, :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "lists", ["sha1_id"], :name => "index_lists_on_sha1_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                :default => "", :null => false

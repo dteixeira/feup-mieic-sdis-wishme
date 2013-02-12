@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :token_authenticatable
   before_save :ensure_authentication_token
 
+  has_many :lists, :class_name => 'List', :dependent => :destroy
+  has_many :items, :through => :lists
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :password, :password_confirmation, :authentication_token
 end
