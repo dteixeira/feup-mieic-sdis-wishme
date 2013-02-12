@@ -1,6 +1,7 @@
 class Api::BaseApiController < ApplicationController
 
   respond_to :json
-  include Api::RegistrationsHelper
+  include Api::Users::RegistrationsHelper
+  include Api::Users::SessionsHelper
 
 end

@@ -3,7 +3,9 @@ Wishme::Application.routes.draw do
   root :to => "home#index"
 
   # API routes
-  post      'api/register' => 'api/registrations#create', :as => :registrations_create
+  post      'api/register'    => 'api/users/registrations#create',    :as => :users_registrations_create
+  post      'api/login'       => 'api/users/sessions#create',         :as => :users_sessions_create
+  post      'api/logout'      => 'api/users/sessions#destroy',        :as => :users_sessions_destroy
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

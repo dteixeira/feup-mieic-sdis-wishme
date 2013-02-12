@@ -1,4 +1,4 @@
-class Api::RegistrationsController < Api::BaseApiController
+class Api::Users::RegistrationsController < Api::BaseApiController
 
   respond_to :json
   before_filter :check_valid_registration
