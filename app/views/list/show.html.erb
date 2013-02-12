@@ -1,0 +1,9 @@
+<% unless @list %>
+  <p>list does not exist</p>
+<% else %>
+  <% if @list.private %>
+    <p>list is private</p>
+  <% else %>
+    <p>YAY! LIST IS GO!</p>
+  <% end %>
+<% end %>

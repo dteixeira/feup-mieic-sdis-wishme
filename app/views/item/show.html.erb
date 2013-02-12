@@ -1,0 +1,9 @@
+<% unless @item %>
+  <p>item does not exist</p>
+<% else %>
+  <% if @item.private %>
+    <p>item is private</p>
+  <% else %>
+    <p>YAY! ITEM IS GO!</p>
+  <% end %>
+<% end %>
