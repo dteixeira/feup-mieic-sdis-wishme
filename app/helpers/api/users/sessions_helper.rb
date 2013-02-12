@@ -26,6 +26,8 @@ module Api::Users::SessionsHelper
     @user = user
     render :json => {
       :success => true,
+      :email => @user.email,
+      :username => @user.username,
       :authentication_token => user.authentication_token
     }
   end
