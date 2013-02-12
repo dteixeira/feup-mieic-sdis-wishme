@@ -3,13 +3,19 @@ Wishme::Application.routes.draw do
   root :to => "home#index"
 
   # View routes
-  get       'list/:sha1_id'   => 'list#show',                         :as => :list_show
-  get       'item/:sha1_id'   => 'item#show',                         :as => :item_show
+  get       'list/:sha1_id'     => 'list#show',                         :as => :list_show
+  get       'item/:sha1_id'     => 'item#show',                         :as => :item_show
 
   # API routes
-  post      'api/register'    => 'api/users/registrations#create',    :as => :users_registrations_create
-  post      'api/login'       => 'api/users/sessions#create',         :as => :users_sessions_create
-  post      'api/logout'      => 'api/users/sessions#destroy',        :as => :users_sessions_destroy
+  post      'api/register'      => 'api/users/registrations#create',    :as => :users_registrations_create
+  post      'api/login'         => 'api/users/sessions#create',         :as => :users_sessions_create
+  post      'api/logout'        => 'api/users/sessions#destroy',        :as => :users_sessions_destroy
+
+  post      'api/list/show'     => 'api/list/list#show',                :as => :list_list_show
+  post      'api/list/show_all' => 'api/list/list#show_all',            :as => :list_list_show_all
+  post      'api/list/update'   => 'api/list/list#update',              :as => :list_list_update
+  post      'api/list/delete'   => 'api/list/list#delete',              :as => :list_list_delete
+  post      'api/list/clean'    => 'api/list/list#clean',               :as => :list_list_clean
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

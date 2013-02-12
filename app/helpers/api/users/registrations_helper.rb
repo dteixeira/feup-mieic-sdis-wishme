@@ -24,7 +24,7 @@ module Api::Users::RegistrationsHelper
     end
   end
 
-  private
+  protected
 
   def registration_success
     render :json => {
