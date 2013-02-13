@@ -12,6 +12,7 @@ module Api::Users::SessionsHelper
 
   def check_valid_login
     begin
+      params[:user][:login].downcase!
       resource = User.find_for_database_authentication(:email => params[:user][:login]) ||
         User.find_for_database_authentication(:username => params[:user][:login])
       return sessions_failure I18n.t('sessions.failure.password') unless resource.valid_password? params[:user][:password]
