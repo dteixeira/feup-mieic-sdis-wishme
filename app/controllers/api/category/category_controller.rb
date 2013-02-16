@@ -4,7 +4,7 @@ class Api::Category::CategoryController < Api::BaseApiController
 
   def show_all
     cats = []
-    ::Category.all.each { |i| cats.push({:id => i.id, :name => i.name}) }
+    ::Category.all.each { |i| cats.push({:id => i.id, :name => I18n.t("category.#{i.name}")}) }
     render :json => {
       :success => true,
       :categories => cats
