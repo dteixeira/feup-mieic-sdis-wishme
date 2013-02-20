@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Category seeds
+cats = %w{other game landmark book product text qr_code logo}
+cats.each do |cat|
+  Category.create :name => cat
+end

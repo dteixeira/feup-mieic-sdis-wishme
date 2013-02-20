@@ -25,7 +25,7 @@ class Api::Goggles::GogglesController < Api::BaseApiController
     resp.each do |r|
       res = {}
       res[:message] = r.message
-      if Category.find_by_name(r.type.downcase.gsub(' ', '_'))
+      if ::Category.find_by_name(r.type.downcase.gsub(' ', '_'))
         res[:category] = r.type.downcase.gsub(' ', '_')
       else
         res[:category] = 'other'

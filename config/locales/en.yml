@@ -2,4 +2,33 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  list:
+    failure:
+      params_failure: 'Some parameters are missing or invalid.'
+  item:
+    failure:
+      params_failure: 'Some parameters are missing or invalid.'
+  goggles:
+    failure:
+      params_failure: 'Some parameters are missing or invalid.'
+  registrations:
+    failure:
+      email: 'Email is already being used.'
+      username: 'Username is already being used.'
+      missing: 'Some parameters are missing.'
+      bad_params: 'Some parameters are invalid.'
+  sessions:
+    failure:
+      invalid_api_access: 'Unauthorized API access.'
+      missing_invalid: 'Some parameters are missing or invalid.'
+      password: 'Incorrect password'
+      invalid_fb_login: 'Invalid Facebook login token.'
+  category:
+    game: 'Game'
+    book: 'Book'
+    landmark: 'Landmark'
+    product: 'Product'
+    text: 'Text'
+    qr_code: 'QR Code'
+    logo: 'Logo'
+    other: 'Other'
