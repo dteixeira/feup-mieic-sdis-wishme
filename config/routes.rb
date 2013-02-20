@@ -10,6 +10,7 @@ Wishme::Application.routes.draw do
   post      'api/register'        => 'api/users/registrations#create',    :as => :users_registrations_create
   post      'api/login'           => 'api/users/sessions#create',         :as => :users_sessions_create
   post      'api/logout'          => 'api/users/sessions#destroy',        :as => :users_sessions_destroy
+  post      'api/login_fb'        => 'api/users/sessions#create_fb',      :as => :users_sessions_create_fb
 
   post      'api/list/show'       => 'api/list/list#show',                :as => :list_list_show
   post      'api/list/show_all'   => 'api/list/list#show_all',            :as => :list_list_show_all
