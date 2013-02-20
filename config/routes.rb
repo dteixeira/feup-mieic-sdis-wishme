@@ -21,6 +21,12 @@ Wishme::Application.routes.draw do
 
   post      'api/goggles/lookup'  => 'api/goggles/goggles#lookup',        :as => :goggles_goggles_lookup
 
+  post      'api/item/create'     => 'api/item/item#create',              :as => :item_item_create
+  post      'api/item/delete'     => 'api/item/item#delete',              :as => :item_item_delete
+  post      'api/item/update'     => 'api/item/item#update',              :as => :item_item_update
+
+  post      'api/category/all'    => 'api/category/category#show_all',    :as => :category_category_show_all
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

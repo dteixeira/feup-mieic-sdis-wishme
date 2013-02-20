@@ -96,7 +96,8 @@ class Api::List::ListController < Api::BaseApiController
         :description => i.description,
         :private => i.private,
         :sha1_id => i.sha1_id,
-        :category => I18n.t("category.#{i.category.name}")
+        :category => I18n.t("category.#{i.category.name}"),
+        :img_hash => i.img_hash
       })
     end
     {
