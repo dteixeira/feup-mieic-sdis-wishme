@@ -25,12 +25,12 @@ class Api::Goggles::GogglesController < Api::BaseApiController
     resp.each do |r|
       res = {}
       res[:message] = r.message
-      if ::Category.find_by_name(r.type.downcase.gsub(' ', '_'))
-        res[:category] = r.type.downcase.gsub(' ', '_')
+      cat = ::Category.find_by_name(r.type.downcase.gsub(' ', '_'))
+      if cat
+        res[:category] = cat.id
       else
-        res[:category] = 'other'
+        res[:category] = ::Category.find_by_name('other').id
       end
-      res[:category] = I18n.t("category.#{res[:category]}")
       parsed.push res
     end
     return parsed
