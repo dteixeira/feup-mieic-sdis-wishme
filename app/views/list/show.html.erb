@@ -4,6 +4,17 @@
   <% if @list.private %>
     <p>list is private</p>
   <% else %>
-    <p>YAY! LIST IS GO!</p>
+    <div id="wrapper">
+      <div id="columns">
+        <% @list.items.each do |i|  %>
+          <div class="pin">
+            <% if i.img_hash %>
+              <img src="<%= "http://i.imgur.com/#{i.img_hash}.jpg" %>>
+            <% end %>
+            <p><%= i.name %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 <% end %>
