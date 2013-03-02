@@ -18,6 +18,10 @@ class Api::Item::ItemController < Api::BaseApiController
   def create
     begin
       hash = params[:image][:base64]
+    rescue
+      hash = nil
+    end
+    begin
       list = @user.lists.where('sha1_id' => params[:item][:list]).first
       params[:item].except! :list
       item = ::Item.new params[:item]
@@ -84,7 +88,7 @@ class Api::Item::ItemController < Api::BaseApiController
         :description => i.description,
         :private => i.private,
         :sha1_id => i.sha1_id,
-        :category => I18n.t("category.#{i.category.name}"),
+        :category => i.category_id,
         :img_hash => i.img_hash
       })
     end
