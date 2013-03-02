@@ -8,10 +8,17 @@
       <div id="columns">
         <% @list.items.each do |i|  %>
           <div class="pin">
-            <% if i.img_hash %>
-              <img src="<%= "http://i.imgur.com/#{i.img_hash}.jpg" %>>
+            <% if i.img_hash && !i.img_hash.empty? %>
+              <img src="<%= "http://i.imgur.com/#{i.img_hash}.jpg" %>">
+            <% else %>
+              <%= image_tag 'logo.png' %>
             <% end %>
-            <p><%= i.name %></p>
+            <p>
+              <%= i.name %>
+              <% if i.description && !i.description.empty? %>
+                <br/><%= i.description %>
+              <% end %>
+            </p>
           </div>
         <% end %>
       </div>
