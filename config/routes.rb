@@ -4,7 +4,7 @@ Wishme::Application.routes.draw do
 
   # View routes
   get       'list/:sha1_id'       => 'list#show',                         :as => :list_show
-  get       'item/:sha1_id'       => 'item#show',                         :as => :item_show
+  #get       'item/:sha1_id'       => 'item#show',                         :as => :item_show
 
   # API routes
   post      'api/register'        => 'api/users/registrations#create',    :as => :users_registrations_create
