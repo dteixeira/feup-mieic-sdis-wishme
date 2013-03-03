@@ -32,3 +32,7 @@ en:
     qr_code: 'QR Code'
     logo: 'Logo'
     other: 'Other'
+  site:
+    no_list: 'This is not the list you are looking for.'
+    private_list: "Private doesn't mean that there will be any naughty pictures... Better turn back, it's just not worth it."
+    empty_list: 'This one is empty... Just let it go...'

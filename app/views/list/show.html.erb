@@ -1,9 +1,9 @@
 <div id="navigation">
-  <a href="<%= root_url %>"><%= image_tag 'name.png', :class => 'logo' %><a>
+  <a href="<%= root_url %>"><%= image_tag 'name.png', :class => 'logo' %></a>
 </div>
 <% unless @list %>
   <div class="notice">
-    <p>list does not exist</p>
+    <p><%= I18n.t('site.no_list') %></p>
   </div>
   <div class="notice name">
     <%= image_tag 'name.png' %>
@@ -11,19 +11,25 @@
 <% else %>
   <% if @list.private %>
     <div class="notice">
-      <p>list is private</p>
+      <p><%= I18n.t('site.private_list') %></p>
     </div>
     <div class="notice name">
       <%= image_tag 'name.png' %>
     </div>
   <% elsif @list.items.size == 0 %>
     <div class="notice">
-      <p>list is empty</p>
+      <p><%= I18n.t('site.empty_list') %></p>
     </div>
     <div class="notice name">
       <%= image_tag 'name.png' %>
     </div>
   <% else %>
+    <div class="notice title">
+      <p><%= @list.name %></p>
+      <% if @list.description && !@list.description.empty? %>
+        <p class="divider"><%= @list.description %></p>
+      <% end %>
+    </div>
     <div id="wrapper">
       <div id="columns">
         <% @list.items.each do |i|  %>
@@ -35,7 +41,7 @@
               <%= image_tag 'logo.png' %>
             <% end %>
             <p>
-            <%= i.name %><strong> <%= I18n.t("category.#{i.category.name}")%></strong>
+              <%= i.name %><strong> <%= I18n.t("category.#{i.category.name}")%></strong>
               <% if i.description && !i.description.empty? %>
                 <br/><%= i.description %>
               <% end %>

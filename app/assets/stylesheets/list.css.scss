@@ -44,10 +44,10 @@ body {
 }
 
 #wrapper {
-	width: 50%;
+	width: 800px;
 	max-width: 1100px;
 	min-width: 800px;
-	margin: 100px auto;
+	margin: 0px auto;
 }
 
 #columns {
@@ -79,15 +79,18 @@ body {
 }
 
 .notice {
-	width: 50%;
+	width: 800px;
+    max-width: 1100px;
+	min-width: 800px;
+	margin: 100px auto;
 	margin-left: auto;
 	margin-right: auto;
+    margin-bottom: 20px;
 	text-align: center;
 	font-size: 1.5em;
 	font-family: sans-serif;
 	margin-top: 100px;
 	position: relative;
-	background: #FEFEFE;
 	border: 2px solid #FAFAFA;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 	-webkit-column-break-inside: avoid;
@@ -100,11 +103,32 @@ body {
 }
 
 .notice.name {
-	margin-top: 50px;
+	margin-top: 20px;
 
 	img {
 		max-height:20%;
 	}
+}
+
+.notice.title {
+    padding: 0;
+    margin-bottom: 20px;
+    border:0;
+    text-align:left;
+    font-size:1.0em;
+    color:#444444;
+
+    p {
+      padding: 5px 10px 0px 10px;
+      margin: 10px 20px 5px 20px;
+
+      &.divider {
+        border-top:1px solid #cccccc;
+        padding-bottom:10px;
+        padding-top:10px;
+        margin-top:0px;
+      }
+    }
 }
 
 .pin img {
@@ -138,5 +162,4 @@ body {
 
 #columns:hover .pin:not(:hover) {
 	opacity: 0.3;
-	
 }
