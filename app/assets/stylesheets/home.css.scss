@@ -1,3 +1,67 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#title_image {
+  max-width:800px;
+  float:center;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:20px;
+
+  img {
+    width:60%;
+    float:left;
+  }
+
+  p {
+    width:35%;
+    height:150px;
+    padding-left:5%;
+    display:table;
+    margin:0;
+
+    span {
+      display:table-cell;
+      vertical-align:middle;
+      color:#0084ff;
+      font: italic 700 20px/1.2 "playfair display";
+    }
+  }
+}
+
+#info {
+  background-color:#0084ff;
+  width:100%;
+  margin-top:30px;
+  padding-top:20px;
+  padding-bottom:20px;
+
+  #info_wrapper {
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    color:white;
+    font:300 21px/21px "lato";
+  }
+}
+
+#center {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.adjust {
+  min-height:50px;
+}
+
+body {
+  display:table;
+  vertical-align:middle;
+  height:100%;
+  width:100%;
+}
+
+html {
+  height:100%;
+}
