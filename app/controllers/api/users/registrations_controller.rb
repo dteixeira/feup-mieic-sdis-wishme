@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Api::Users::RegistrationsController < Api::BaseApiController
 
   respond_to :json

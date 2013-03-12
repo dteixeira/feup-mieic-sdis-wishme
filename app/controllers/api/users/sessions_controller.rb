@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Api::Users::SessionsController < Api::BaseApiController
 
   before_filter :ensure_api_access, :only => [:destroy]

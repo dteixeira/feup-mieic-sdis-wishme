@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Api::List::ListController < Api::BaseApiController
 
   before_filter :ensure_api_access

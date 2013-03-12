@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Imgur2
   def upload img
     url = URI.parse 'http://api.imgur.com/2/upload.json'
