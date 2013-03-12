@@ -33,7 +33,7 @@
     <div id="wrapper">
       <div id="columns">
         <% @list.items.each do |i|  %>
-          <% continue if i.private  %>
+          <% next if i.private  %>
           <div class="pin">
             <% if i.img_hash && !i.img_hash.empty? %>
               <a href="<%= "http://i.imgur.com/#{i.img_hash}.jpg" %>"><img src="<%= "http://i.imgur.com/#{i.img_hash}.jpg" %>"></a>
